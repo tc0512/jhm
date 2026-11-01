@@ -1,10 +1,14 @@
 import sys
+from pathlib import Path
+import subprocess
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QGridLayout, QPushButton
 )
 from PyQt5.QtCore import Qt
 from rich import print
 
+work_dir = str(Path(__file__).resolve().parent)
+print(f"[[green]INFO [/green]] jhm work directory is `{work_dir}`")
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -16,8 +20,8 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central)
 
         layout = QGridLayout(central)
-        layout.setSpacing(6)  # 同时控制 hgap 和 vgap
-        layout.setContentsMargins(6, 6, 6, 6)
+        layout.setSpacing(10)
+        layout.setContentsMargins(10, 10, 10, 10)
 
         buttons = [
             ["有理数", "整式的加减", "一元一次方程", "几何图形初步", "相交线与平行线", "实数"],
@@ -30,7 +34,7 @@ class MainWindow(QMainWindow):
         for r, row in enumerate(buttons):
             for c, text in enumerate(row):
                 btn = QPushButton(text)
-                btn.setMinimumHeight(65)
+                btn.setMinimumHeight(90)
                 btn.clicked.connect(self.on_click)
                 layout.addWidget(btn, r, c)
 
@@ -45,7 +49,11 @@ class MainWindow(QMainWindow):
     def on_click(self):
         btn = self.sender()
         label = btn.text().replace("\n", "")
-        print(f"[[green]INFO[/green]] clicked: `{label}`")
+        print(f"[[green]INFO [/green]] clicked: `{label}`")
+        if label=="有理数":
+            script_path = work_dir+'/rational.py'
+            print(f"[[dim white]DEBUG[/dim white]] Run `{script_path}`")
+            subprocess.run(['python', script_path])
 
 
 if __name__ == "__main__":
