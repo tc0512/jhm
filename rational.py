@@ -1,10 +1,13 @@
 import sys
+from pathlib import Path
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QGridLayout, QPushButton, QDialog,
     QVBoxLayout, QTextBrowser
 )
 from PyQt5.QtCore import Qt
 from rich import print
+
+work_dir = str(Path(__file__).resolve().parent)
 
 class RichTextWindow(QDialog):
     def __init__(self, title, html, parent=None):
@@ -62,17 +65,31 @@ class MainWindow(QMainWindow):
         print(f"[[green]INFO [/green]] clicked: `{label}`")
         if label=="正数和负数":
             html = """
-                <h2>1. 什么是正数和负数?</h2>
+                <h2>1. 什么是正数和负数? </h2>
                 <p>像3, 1.8%, 3.5这样大于0的数叫作正数</p>
                 <p>像-3, -2.8%, -53.5, -1.2这样大于0的数叫作负数</p>
-                <h2>2. 如何认识`0`?</h2>
+                <h2>2. 如何认识`0`? </h2>
                 <p>0既不是正数, 也不是复数。0是正数和负数的分界</p>
-                <h2>3. 什么是具有相反意义的量?</h2>
-                <p>为了用数表示具有相反意义的量, 我们把某种量的一种意义规定为正的, 
-                而把与它相反的一种意义规定为负的。描述一对具有相反意义的量的词语一
-                般是一对反义词, 如上升和下降, 收入与支出等。</p>
+                <h2>3. 什么是具有相反意义的量? </h2>
+                <p>为了用数表示具有相反意义的量, 我们把某种量的一种意义规定为正的, 而把与它相反的一种意义规定为负的。描述一对具有相反意义的量的词语一般是一对反义词, 如上升和下降, 收入与支出等。</p>
             """
             win = RichTextWindow(title="jhm>有理数>正数和负数", html=html, parent=self)
+            win.exec_()
+        if label=="有理数":
+            html = f"""
+                <h2>1. 什么是有理数? </h2>
+                <p>正整数、0、负整数统称为整数; 正分数、负分数统称为分数 (因为小数可以化成分数, 所以也将其看成分数) 。整数和分数统称为有理数。</p>
+                <h2>2. 有理数是如何分类的? </h2>
+                <h3>(1)按整数和分数的关系分类: </h3>
+                <img src="{work_dir}/images/rational-picture1.jpg" alt="🖼️" width="300">
+                <h3>(2)按正数、0和负数的关系分类: </h3>
+                <img src="{work_dir}/images/rational-picture2.jpg" alt="🖼️" width="300">
+                <h2>3. 什么是数轴? </h2>
+                <p>数轴是规定了原点、正方向和单位长度的直线。</p>
+                <img src="{work_dir}/images/rational-picture3.jpg" alt="🖼️" width="300">
+                <p>(*) 数轴的三要素: 原点、正方向和单位长度, 三者缺一不可。</p>
+            """
+            win = RichTextWindow(title="jhm>有理数>有理数", html=html, parent=self)
             win.exec_()
 
 
