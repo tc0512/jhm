@@ -88,6 +88,8 @@ class MainWindow(QMainWindow):
                 <p>数轴是规定了原点、正方向和单位长度的直线。</p>
                 <img src="{work_dir}/images/rational-picture3.jpg" alt="🖼️" width="300">
                 <p>(*) 数轴的三要素: 原点、正方向和单位长度, 三者缺一不可。</p>
+                <h2>4. 数轴上的点和有理数的关系是什么</h2>
+                <p>一般地, 设a是一个实数, 则数轴上表示数a的点在原点的右边, 与原点的距离是a个单位长度; 表示数-a的点在原点的左边, 与原点的距离是a个单位长度。任何一个有理数都能在数轴上找到表示它位置的点, 而且是唯一确定的点。</p>
             """
             win = RichTextWindow(title="jhm>有理数>有理数", html=html, parent=self)
             win.exec_()
