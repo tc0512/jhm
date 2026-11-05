@@ -146,9 +146,16 @@ class MainWindow(QMainWindow):
                 <p>(3)分配律: a(b+c)=ab+ac。</p>
                 <p>逆用分配律, 可简化运算。</p>
                 <h2>5. 有理数的除法法则是什么? </h2>
-                <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即<img src="{work_dir}/images/rational-picture4.png" alt="" style="vertical-align:middle;width:16px;height:16px;">。</p>
+                <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即<img src="{work_dir}/images/rational-picture4.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">。</p>
                 <p>  从有理数除法法则, 容易得出: </p>
                 <p>两数相除, 同号得正, 异号得负, 并把绝对值相除。0除以任何一个不为0的数, 都得0。</p>
+            """
+            win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
+            win.exec_()
+        if label=="有理数的乘方":
+            html = f"""
+                <h2>1. 什么是乘方? </h2>
+                <p>求n个相同因数的积的运算, 叫作乘方, 乘方的结果叫作幂。在<img src="{work_dir}/images/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, a叫作底数, n叫作指数。当<img src="{work_dir}/images/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">看作a的n次方的结果时, 也可读作 "a的n次幂" 。例如: 在<img src="{work_dir}/images/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, 底数是9, 指数是4, <img src="{work_dir}/images/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">读作 "9的4次方" , 或 "9的4次幂" 。</p>
             """
             win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
             win.exec_()
