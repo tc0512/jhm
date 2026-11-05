@@ -147,6 +147,8 @@ class MainWindow(QMainWindow):
                 <p>逆用分配律, 可简化运算。</p>
                 <h2>5. 有理数的除法法则是什么? </h2>
                 <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即<img src="{work_dir}/images/rational-picture4.png" alt="" style="vertical-align:middle;width:16px;height:16px;">。</p>
+                <p>  从有理数除法法则, 容易得出: </p>
+                <p>两数相除, 同号得正, 异号得负, 并把绝对值相除。0除以任何一个不为0的数, 都得0。</p>
             """
             win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
             win.exec_()
