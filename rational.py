@@ -131,7 +131,7 @@ class MainWindow(QMainWindow):
             win = RichTextWindow(title="jhm>有理数>有理数的加减法", html=html, parent=self)
             win.exec_()
         if label=="有理数的乘除法":
-            html = """
+            html = f"""
                 <h2>1. 有理数的乘法法则是什么? </h2>
                 <p>  两数相乘, 同号得正, 异号得负, 并把绝对值相乘。</p>
                 <p>  任何数与0相乘, 都得0。</p>
@@ -146,8 +146,10 @@ class MainWindow(QMainWindow):
                 <p>(3)分配律: a(b+c)=ab+ac。</p>
                 <p>逆用分配律, 可简化运算。</p>
                 <h2>5. 有理数的除法法则是什么? </h2>
-                <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即</p>
+                <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即<img src="{work_dir}/images/rational-picture4.png" alt="" style="vertical-align:middle;width:16px;height:16px;">。</p>
             """
+            win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
+            win.exec_()
 
 
 if __name__ == "__main__":
