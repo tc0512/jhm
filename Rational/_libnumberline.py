@@ -19,7 +19,6 @@ def number_line(x):
     ax.scatter(x, 0, s=50, c="black")
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(y_min, y_max)
-    ax.set_aspect("equal")
     plt.savefig(tmp_dir+"numberline.png")
     plt.close()
 
