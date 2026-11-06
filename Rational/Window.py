@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+import subprocess
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QGridLayout, QPushButton, QDialog,
     QVBoxLayout, QTextBrowser
@@ -170,8 +171,13 @@ class MainWindow(QMainWindow):
                 <h2>5. 什么是近似数? </h2>
                 <p>  在日常生活和实际生产中, 能准确表示一些量的数, 称为准确数; 接近准确数而不等于准确数的数叫作这个数的近似数。近似数与准确数的接近程度可以用精确度表示。</p>
             """
-            win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
+            win = RichTextWindow(title="jhm>有理数>有理数的乘方", html=html, parent=self)
             win.exec_()
+        if label=="有理数计算器":
+            script_path = parent_dir+"/Calculator.py"
+            command = ["python", script_path]
+            print(f"[[dim white]DEBUG[/dim white]] Run {command}")
+            subprocess.run(command)
 
 
 if __name__ == "__main__":

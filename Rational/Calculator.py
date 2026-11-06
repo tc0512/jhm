@@ -58,7 +58,7 @@ def eval_rational(expr):
 class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("有理数计算器")
+        self.setWindowTitle("jhm>有理数>有理数计算器")
         self.resize(320, 130)
 
         layout = QVBoxLayout(self)
