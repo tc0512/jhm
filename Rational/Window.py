@@ -7,7 +7,8 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt
 from rich import print
 
-work_dir = str(Path(__file__).resolve().parent)+"/.."
+parent_dir = str(Path(__file__).resolve().parent)
+work_dir = parent_dir+"/.."
 
 class RichTextWindow(QDialog):
     def __init__(self, title, html, parent=None):
