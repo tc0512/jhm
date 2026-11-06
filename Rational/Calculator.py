@@ -116,7 +116,11 @@ class MyWindow(QWidget):
                 category_part = "负整数"
         else: #分数
             category_part = "正分数" if sym_part=="+" else "负分数"
-        msg = f"结果: {res_part}\n数值近似: {float_part}\n符号: {sym_part}\n类别: {category_part}"
+        msg = (f"结果: {res_part}<br>"
+               f"数值近似: {float_part}<br>"
+               f"符号: {sym_part}<br>"
+               f"类别: {category_part}<br>"
+               "数轴: <br>")
         QMessageBox.information(self, "计算结果", msg)
 
 
