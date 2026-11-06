@@ -157,6 +157,14 @@ class MainWindow(QMainWindow):
                 <h2>1. 什么是乘方? </h2>
                 <p>求n个相同因数的积的运算, 叫作乘方, 乘方的结果叫作幂。在<img src="{work_dir}/images/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, a叫作底数, n叫作指数。当<img src="{work_dir}/images/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">看作a的n次方的结果时, 也可读作 "a的n次幂" 。例如: 在<img src="{work_dir}/images/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, 底数是9, 指数是4, <img src="{work_dir}/images/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">读作 "9的4次方" , 或 "9的4次幂" 。</p>
                 <p>(*) 注意分辨<img src="{work_dir}/images/rational-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">和<img src="{work_dir}/images/rational-picture8.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">: <img src="{work_dir}/images/rational-picture8.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的意义是 "-a的n次方" , 而<img src="{work_dir}/images/rational-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的意义是 "a的n次方的相反数" , 两者不可混淆。例如: <img src="{work_dir}/images/rational-picture9.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">, 而<img src="{work_dir}/images/rational-picture10.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">。</p>
+                <h2>2. 乘方运算的符号法则是什么? </h2>
+                <p>  负数的奇次幂是负数, 负数的偶次幂是正数; 正数的任何次幂都是正数; 0的任何次幂都是0。</p>
+                <h2>3. 有理数混合运算的顺序是怎样的? </h2>
+                <p>(1)先乘方, 再乘除, 最后加减。</p>
+                <p>(2)同级运算, 从左到右进行。</p>
+                <p>(3)如有括号, 先做括号内的运算, 按小括号、中括号、大括号依次进行。</p>
+                <h2>4. 什么是科学记数法? </h2>
+                <p>把一个大于10的数表示成<img src="{work_dir}/images/rational-picture11.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的形式</p>
             """
             win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
             win.exec_()
