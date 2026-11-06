@@ -96,10 +96,17 @@ class MyWindow(QWidget):
 
         # 显示：分数形式 + 小数形式
         if result.denominator == 1:
-            msg = f"{result.numerator}"
+            res_part = str(result.numerator)
         else:
-            msg = f"{result.numerator}/{result.denominator}\n= {float(result):.15g}"
-
+            res_part = f"{result.numerator}/{result.denominator}"
+        float_part = float(result)
+        if float_part>0:
+            sym_part = "+"
+        if float_part==0:
+            sym_part = "0"
+        if float_part<0:
+            sym_part = "-"
+        msg = f"结果: {res_part}\n数值近似: {float_part}\n符号: {sym_part}"
         QMessageBox.information(self, "计算结果", msg)
 
 
