@@ -21,5 +21,3 @@ def number_line(x):
     ax.set_ylim(y_min, y_max)
     plt.savefig(tmp_dir+"numberline.png")
     plt.close()
-
-number_line(9)
