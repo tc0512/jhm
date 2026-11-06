@@ -3,7 +3,10 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QLineEdit,
 import ast
 from fractions import Fraction
 import sys
+from pathlib import Path
+from _libnumberline import number_line
 
+tmp_dir = str(Path(__file__).resolve().parent)+"/../tmp"
 
 def eval_rational(expr):
     def _eval(node):
@@ -116,11 +119,15 @@ class MyWindow(QWidget):
                 category_part = "负整数"
         else: #分数
             category_part = "正分数" if sym_part=="+" else "负分数"
+        # 生成数轴
+        number_line(float_part)
+        # message
         msg = (f"结果: {res_part}<br>"
                f"数值近似: {float_part}<br>"
                f"符号: {sym_part}<br>"
                f"类别: {category_part}<br>"
-               "数轴: <br>")
+               "数轴: <br>"
+               f'<img src="{tmp_dir}/numberline.png" alt="🖼️" width="300">')
         QMessageBox.information(self, "计算结果", msg)
 
 
