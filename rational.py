@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
 
         buttons = [
             ["正数和负数", "有理数", "有理数的加减法"],
-            ["有理数的乘除法", "有理数的乘方", "小工具"]
+            ["有理数的乘除法", "有理数的乘方", "有理数计算器"]
         ]
 
         for r, row in enumerate(buttons):
