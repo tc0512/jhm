@@ -164,7 +164,10 @@ class MainWindow(QMainWindow):
                 <p>(2)同级运算, 从左到右进行。</p>
                 <p>(3)如有括号, 先做括号内的运算, 按小括号、中括号、大括号依次进行。</p>
                 <h2>4. 什么是科学记数法? </h2>
-                <p>把一个大于10的数表示成<img src="{work_dir}/images/rational-picture11.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的形式</p>
+                <p>  把一个大于10的数表示成<img src="{work_dir}/images/rational-picture11.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的形式 (其中a大于或等于1且小于10, n是正整数) , 这样的记数方法叫科学记数法。</p>
+                <p>(*) 科学记数法的关键是找出a和n, 其中a是整数数位只有一位的数, 它是原数的小数点向左移动后的结果, n是比原数整数位数少1的正整数。</p>
+                <h2>5. 什么是近似数? </h2>
+                <p>  在日常生活和实际生产中, 能准确表示一些量的数, 称为准确数; 接近准确数而不等于准确数的数叫作这个数的近似数。近似数与准确数的接近程度可以用精确度表示。</p>
             """
             win = RichTextWindow(title="jhm>有理数>有理数的乘除法", html=html, parent=self)
             win.exec_()
