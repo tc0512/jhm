@@ -8,6 +8,10 @@ from _libnumberline import number_line
 
 tmp_dir = str(Path(__file__).resolve().parent)+"/../tmp"
 
+ALLOWED_FUNCS = {
+    "abs": lambda f: abs(f),   # Fraction 支持 abs()
+}
+
 def eval_rational(expr):
     def _eval(node):
         if isinstance(node, ast.Expression):
@@ -20,7 +24,7 @@ def eval_rational(expr):
             if isinstance(v, int):
                 return Fraction(v)
             if isinstance(v, float):
-                return Fraction(str(v))     # 字符串构造，避免浮点误差
+                return Fraction(str(v))
             raise ValueError("只支持数字")
 
         if isinstance(node, ast.BinOp):
@@ -53,10 +57,23 @@ def eval_rational(expr):
             if isinstance(node.op, ast.UAdd): return +v
             raise ValueError("不支持的一元运算符")
 
+        # ===== 新增：函数调用 =====
+        if isinstance(node, ast.Call):
+            if not isinstance(node.func, ast.Name):
+                raise ValueError("只支持简单函数名")
+            name = node.func.id
+            if name not in ALLOWED_FUNCS:
+                raise ValueError(f"不支持的函数：{name}")
+            if node.keywords:
+                raise ValueError("不支持关键字参数")
+            if len(node.args) != 1:
+                raise ValueError(f"{name} 需要 1 个参数")
+            arg = _eval(node.args[0])
+            return ALLOWED_FUNCS[name](arg)
+
         raise ValueError(f"不支持的语法：{type(node).__name__}")
 
     return _eval(ast.parse(expr, mode="eval"))
-
 
 class MyWindow(QWidget):
     def __init__(self):
