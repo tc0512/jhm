@@ -94,7 +94,7 @@ class MyWindow(QWidget):
             QMessageBox.warning(self, "计算错误", f"无法计算：{e}")
             return
 
-        # 显示：分数形式 + 小数形式
+        # 显示
         if result.denominator == 1:
             res_part = str(result.numerator)
         else:
@@ -106,7 +106,17 @@ class MyWindow(QWidget):
             sym_part = "0"
         if float_part<0:
             sym_part = "-"
-        msg = f"结果: {res_part}\n数值近似: {float_part}\n符号: {sym_part}"
+        # 有理数分类
+        if float_part.is_integer(): #整数
+            if sym_part=="+":
+                category_part = "正整数"
+            if sym_part=="0":
+                category_part = "0"
+            if sym_part=="-":
+                category_part = "负整数"
+        else: #分数
+            category_part = "正分数" if sym_part=="+" else "负分数"
+        msg = f"结果: {res_part}\n数值近似: {float_part}\n符号: {sym_part}\n类别: {category_part}"
         QMessageBox.information(self, "计算结果", msg)
 
 
