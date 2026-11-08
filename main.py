@@ -51,11 +51,9 @@ class MainWindow(QMainWindow):
         label = btn.text().replace("\n", "")
         print(f"[[green]INFO [/green]] clicked: `{label}`")
         if label=="有理数":
-            script_path = work_dir+'/Rational/Window.py'
-            command = ["python", script_path]
-            print(f"[[dim white]DEBUG[/dim white]] Run {command}")
-            subprocess.run(['python', script_path])
-
+            from Rational import Window
+            self.rational_window = Window.MainWindow()
+            self.rational_window.show()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

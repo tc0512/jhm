@@ -4,7 +4,7 @@ import ast
 from fractions import Fraction
 import sys
 from pathlib import Path
-from _libnumberline import number_line
+from ._libnumberline import number_line
 
 tmp_dir = str(Path(__file__).resolve().parent)+"/../tmp"
 
@@ -87,7 +87,7 @@ def to_chinese_unit(x):
     else:
         return f"{sign}{abs_x:.3f}"
 
-class MyWindow(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("jhm>有理数>有理数计算器")
@@ -170,10 +170,3 @@ class MyWindow(QWidget):
                f"科学记数法: {sci_part}<br>"
                f"近似数: {to_chinese_unit(float_part)}")
         QMessageBox.information(self, "计算结果", msg)
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    w = MyWindow()
-    w.show()
-    sys.exit(app.exec_())

@@ -174,14 +174,6 @@ class MainWindow(QMainWindow):
             win = RichTextWindow(title="jhm>有理数>有理数的乘方", html=html, parent=self)
             win.exec_()
         if label=="有理数计算器":
-            script_path = parent_dir+"/Calculator.py"
-            command = ["python", script_path]
-            print(f"[[dim white]DEBUG[/dim white]] Run {command}")
-            subprocess.run(command)
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec_())
+            from .Calculator import MainWindow
+            self.calculator_window = MainWindow()
+            self.calculator_window.show()
