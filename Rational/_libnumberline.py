@@ -1,5 +1,4 @@
-from pathlib import Path
-tmp_dir = str(Path(__file__).resolve().parent)+"/../tmp/"
+from paths import TMP_DIR
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -19,5 +18,5 @@ def number_line(x):
     ax.scatter(x, 0, s=50, c="black")
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(y_min, y_max)
-    plt.savefig(tmp_dir+"numberline.png")
+    plt.savefig(TMP_DIR/"numberline.png")
     plt.close()

@@ -7,9 +7,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt
 from rich import print
-
-parent_dir = str(Path(__file__).resolve().parent)
-work_dir = parent_dir+"/.."
+from paths import IMG_DIR
 
 class RichTextWindow(QDialog):
     def __init__(self, title, html, parent=None):
@@ -83,12 +81,12 @@ class MainWindow(QMainWindow):
                 <p>正整数、0、负整数统称为整数; 正分数、负分数统称为分数 (因为小数可以化成分数, 所以也将其看成分数) 。整数和分数统称为有理数。</p>
                 <h2>2. 有理数是如何分类的? </h2>
                 <h3>(1)按整数和分数的关系分类: </h3>
-                <img src="{work_dir}/images/rational-picture1.jpg" alt="🖼️" width="300">
+                <img src="{IMG_DIR}/rational-picture1.jpg" alt="🖼️" width="300">
                 <h3>(2)按正数、0和负数的关系分类: </h3>
-                <img src="{work_dir}/images/rational-picture2.jpg" alt="🖼️" width="300">
+                <img src="{IMG_DIR}/rational-picture2.jpg" alt="🖼️" width="300">
                 <h2>3. 什么是数轴? </h2>
                 <p>数轴是规定了原点、正方向和单位长度的直线。</p>
-                <img src="{work_dir}/images/rational-picture3.jpg" alt="🖼️" width="300">
+                <img src="{IMG_DIR}/rational-picture3.jpg" alt="🖼️" width="300">
                 <p>(*) 数轴的三要素: 原点、正方向和单位长度, 三者缺一不可。</p>
                 <h2>4. 数轴上的点和有理数的关系是什么</h2>
                 <p>一般地, 设a是一个实数, 则数轴上表示数a的点在原点的右边, 与原点的距离是a个单位长度; 表示数-a的点在原点的左边, 与原点的距离是a个单位长度。任何一个有理数都能在数轴上找到表示它位置的点, 而且是唯一确定的点。</p>
@@ -148,7 +146,7 @@ class MainWindow(QMainWindow):
                 <p>(3)分配律: a(b+c)=ab+ac。</p>
                 <p>逆用分配律, 可简化运算。</p>
                 <h2>5. 有理数的除法法则是什么? </h2>
-                <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即<img src="{work_dir}/images/rational-picture4.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">。</p>
+                <p>  除以一个不等于0的数, 等于乘这个数的倒数, 即<img src="{IMG_DIR}/rational-picture4.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">。</p>
                 <p>  从有理数除法法则, 容易得出: </p>
                 <p>两数相除, 同号得正, 异号得负, 并把绝对值相除。0除以任何一个不为0的数, 都得0。</p>
             """
@@ -157,8 +155,8 @@ class MainWindow(QMainWindow):
         if label=="有理数的乘方":
             html = f"""
                 <h2>1. 什么是乘方? </h2>
-                <p>求n个相同因数的积的运算, 叫作乘方, 乘方的结果叫作幂。在<img src="{work_dir}/images/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, a叫作底数, n叫作指数。当<img src="{work_dir}/images/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">看作a的n次方的结果时, 也可读作 "a的n次幂" 。例如: 在<img src="{work_dir}/images/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, 底数是9, 指数是4, <img src="{work_dir}/images/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">读作 "9的4次方" , 或 "9的4次幂" 。</p>
-                <p>(*) 注意分辨<img src="{work_dir}/images/rational-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">和<img src="{work_dir}/images/rational-picture8.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">: <img src="{work_dir}/images/rational-picture8.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的意义是 "-a的n次方" , 而<img src="{work_dir}/images/rational-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的意义是 "a的n次方的相反数" , 两者不可混淆。例如: <img src="{work_dir}/images/rational-picture9.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">, 而<img src="{work_dir}/images/rational-picture10.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">。</p>
+                <p>求n个相同因数的积的运算, 叫作乘方, 乘方的结果叫作幂。在<img src="{IMG_DIR}/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, a叫作底数, n叫作指数。当<img src="{IMG_DIR}/rational-picture5.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">看作a的n次方的结果时, 也可读作 "a的n次幂" 。例如: 在<img src="{IMG_DIR}/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">中, 底数是9, 指数是4, <img src="{IMG_DIR}/rational-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">读作 "9的4次方" , 或 "9的4次幂" 。</p>
+                <p>(*) 注意分辨<img src="{IMG_DIR}/rational-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">和<img src="{IMG_DIR}/rational-picture8.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">: <img src="{IMG_DIR}/rational-picture8.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的意义是 "-a的n次方" , 而<img src="{IMG_DIR}/rational-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的意义是 "a的n次方的相反数" , 两者不可混淆。例如: <img src="{IMG_DIR}/rational-picture9.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">, 而<img src="{IMG_DIR}/rational-picture10.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">。</p>
                 <h2>2. 乘方运算的符号法则是什么? </h2>
                 <p>  负数的奇次幂是负数, 负数的偶次幂是正数; 正数的任何次幂都是正数; 0的任何次幂都是0。</p>
                 <h2>3. 有理数混合运算的顺序是怎样的? </h2>
@@ -166,7 +164,7 @@ class MainWindow(QMainWindow):
                 <p>(2)同级运算, 从左到右进行。</p>
                 <p>(3)如有括号, 先做括号内的运算, 按小括号、中括号、大括号依次进行。</p>
                 <h2>4. 什么是科学记数法? </h2>
-                <p>  把一个大于10的数表示成<img src="{work_dir}/images/rational-picture11.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的形式 (其中a大于或等于1且小于10, n是正整数) , 这样的记数方法叫科学记数法。</p>
+                <p>  把一个大于10的数表示成<img src="{IMG_DIR}/rational-picture11.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16px;">的形式 (其中a大于或等于1且小于10, n是正整数) , 这样的记数方法叫科学记数法。</p>
                 <p>(*) 科学记数法的关键是找出a和n, 其中a是整数数位只有一位的数, 它是原数的小数点向左移动后的结果, n是比原数整数位数少1的正整数。</p>
                 <h2>5. 什么是近似数? </h2>
                 <p>  在日常生活和实际生产中, 能准确表示一些量的数, 称为准确数; 接近准确数而不等于准确数的数叫作这个数的近似数。近似数与准确数的接近程度可以用精确度表示。</p>

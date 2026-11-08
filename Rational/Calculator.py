@@ -5,7 +5,7 @@ from fractions import Fraction
 import sys
 from pathlib import Path
 from ._libnumberline import number_line
-
+from paths import TMP_DIR
 tmp_dir = str(Path(__file__).resolve().parent)+"/../tmp"
 
 ALLOWED_FUNCS = {
@@ -164,7 +164,7 @@ class MainWindow(QWidget):
                f"符号: {sym_part}<br>"
                f"类别: {category_part}<br>"
                "数轴: <br>"
-               f'<img src="{tmp_dir}/numberline.png" alt="🖼️" width="300">'
+               f'<img src="{TMP_DIR}/numberline.png" alt="🖼️" width="300">'
                f"相反数: {negative_part}<br>"
                f"绝对值: {abs_part}<br>"
                f"科学记数法: {sci_part}<br>"
