@@ -53,7 +53,10 @@ class MainWindow(QMainWindow):
             from Rational import Window
             self.rational_window = Window.MainWindow()
             self.rational_window.show()
-
+        if label=="整式的加减":
+            from Polynomial import Window
+            self.polynomial_window = Window.MainWindow()
+            self.polynomial_window.show()
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
