@@ -6,9 +6,8 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt
 from rich import print
-
-work_dir = str(Path(__file__).resolve().parent)
-print(f"[[green]INFO [/green]] jhm work directory is `{work_dir}`")
+from paths import BASE_DIR
+print(f"[[green]INFO [/green]] jhm work directory is `{BASE_DIR}`")
 
 class MainWindow(QMainWindow):
     def __init__(self):
