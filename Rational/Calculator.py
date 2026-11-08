@@ -75,6 +75,18 @@ def eval_rational(expr):
 
     return _eval(ast.parse(expr, mode="eval"))
 
+def to_chinese_unit(x):
+    x = float(x)
+    abs_x = abs(x)
+    sign = "-" if x < 0 else ""
+
+    if abs_x >= 1e8:
+        return f"{sign}{abs_x / 1e8:.3f}亿"
+    elif abs_x >= 1e4:
+        return f"{sign}{abs_x / 1e4:.3f}万"
+    else:
+        return f"{sign}{abs_x:.3f}"
+
 class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -114,12 +126,12 @@ class MyWindow(QWidget):
             QMessageBox.warning(self, "计算错误", f"无法计算：{e}")
             return
 
-        # 显示
+        #分数形式
         if result.denominator == 1:
             res_part = str(result.numerator)
         else:
             res_part = f"{result.numerator}/{result.denominator}"
-        float_part = float(result)
+        float_part = float(result) #数值
         if float_part>0:
             sym_part = "+"
         if float_part==0:
@@ -138,13 +150,25 @@ class MyWindow(QWidget):
             category_part = "正分数" if sym_part=="+" else "负分数"
         # 生成数轴
         number_line(float_part)
-        # message
+        # 相反数
+        negative_res = -result
+        negative_part = f"{negative_res.numerator}/{negative_res.denominator}" if negative_res.denominator!=1 else str(negative_res.numerator)
+        # 绝对值
+        abs_res = abs(result)
+        abs_part = f"{abs_res.numerator}/{abs_res.denominator}" if abs_res.denominator!=1 else str(abs_res.numerator)
+        # 科学记数法
+        sci_part = f"{float_part:e}"
+        # 弹窗消息
         msg = (f"结果: {res_part}<br>"
                f"数值近似: {float_part}<br>"
                f"符号: {sym_part}<br>"
                f"类别: {category_part}<br>"
                "数轴: <br>"
-               f'<img src="{tmp_dir}/numberline.png" alt="🖼️" width="300">')
+               f'<img src="{tmp_dir}/numberline.png" alt="🖼️" width="300">'
+               f"相反数: {negative_part}<br>"
+               f"绝对值: {abs_part}<br>"
+               f"科学记数法: {sci_part}<br>"
+               f"近似数: {to_chinese_unit(float_part)}")
         QMessageBox.information(self, "计算结果", msg)
 
 
