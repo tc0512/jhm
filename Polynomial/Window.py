@@ -76,3 +76,10 @@ class MainWindow(QMainWindow):
             """
             win = RichTextWindow(title="jhm>整式>整式", html=html, parent=self)
             win.exec_()
+        if label=="整式的加减":
+            html = f"""
+                <h2>1. 什么是同类项? </h2>
+                <p>所含字母相同, 并且相同字母的指数也相同的项叫作同类项。几个常数项也是同类项。如: <img src="{IMG_DIR}/polynomial-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16p;"></p>
+            """
+            win = RichTextWindow(title="jhm>整式>整式的加减", html=html, parent=self)
+            win.exec_()
