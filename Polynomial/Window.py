@@ -79,7 +79,15 @@ class MainWindow(QMainWindow):
         if label=="整式的加减":
             html = f"""
                 <h2>1. 什么是同类项? </h2>
-                <p>所含字母相同, 并且相同字母的指数也相同的项叫作同类项。几个常数项也是同类项。如: <img src="{IMG_DIR}/polynomial-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16p;"></p>
+                <p>所含字母相同, 并且相同字母的指数也相同的项叫作同类项。几个常数项也是同类项。如: <img src="{IMG_DIR}/polynomial-picture6.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16p;">与<img src="{IMG_DIR}/polynomial-picture7.png" alt="🖼️" style="vertical-align:middle;width:16px;height:16p;">是同类项, -1和2是同类项。</p>
+                <h2>2. 什么是合并同类项? </h2>
+                <p>把多项式中的同类项合并成一项, 叫作合并同类项。</p>
+                <h2>3. 合并同类项的法则是什么? </h2>
+                <p>合并同类项后, 所得项的系数是合并前各同类项的系数的和, 且字母连同它的指数不变。</p>
+                <h2>4. 去括号的法则是什么? </h2>
+                <p>如果括号外的因数是正数, 去括号后原括号内各项的符号与原来的符号相同; 如果括号外的因数是负数, 去括号后原括号各项的符号与原来的符号相反。</p>
+                <h2>5. 整式的加减运算法则是什么? </h2>
+                <p>一般地, 几个整式相加减, 如果有括号就先去括号, 然后再合并同类项。</p>
             """
             win = RichTextWindow(title="jhm>整式>整式的加减", html=html, parent=self)
             win.exec_()
